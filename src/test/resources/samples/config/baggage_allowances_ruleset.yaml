@@ -1,0 +1,10 @@
+ruleSet:
+  name: baggage_allowances_ruleset
+  versions:
+    - version: "1.0.2"
+      description: "Rules for evaluating baggage allowances"
+      active: true
+      format: drl
+      type: drools
+      storage: internal
+      filename: baggage_allowances_rules.drl

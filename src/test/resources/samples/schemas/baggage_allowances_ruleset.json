@@ -1,0 +1,53 @@
+{
+    "type": "object",
+    "properties": {
+      "ruleSet": {
+        "type": "object",
+        "required": ["name", "versions"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Required. The name of the rule set."
+          },
+          "versions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["version", "format", "type", "storage", "filename"],
+              "properties": {
+                "version": {
+                  "type": "string",
+                  "description": "Required. The version of the rule set."
+                },
+                "description": {
+                  "type": "string"
+                },
+                "active": {
+                  "type": "boolean"
+                },
+                "format": {
+                  "type": "string",
+                  "enum": ["drl", "spreadsheet", "dmn"],
+                  "description": "Required. The format of the rule set."
+                },
+                "type": {
+                  "type": "string",
+                  "enum": ["drools", "camunda", "gorules"],
+                  "description": "Required. The type of the rule set."
+                },
+                "storage": {
+                  "type": "string",
+                  "enum": ["internal", "external"],
+                  "description": "Required. The storage type of the rule set."
+                },
+                "filename": {
+                  "type": "string",
+                  "description": "Required. The filename of the rule set."
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
